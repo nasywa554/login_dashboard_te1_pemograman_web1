@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login Now</title>
+        <!-- Bootstrap link css -->
+        <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+    <div class="container">
+        <form class="form-group" id="loginForm">
+            <div class="mb-3 bg p-5 rounded">
+                <h2 class="text-center">Login</h2>
+                <label for="exampleFormControlInput1" class="form-label mt-4 fw-semibold">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com"/>
+                <label for="exampleFormControlInput1" class="form-label mt-3 fw-semibold">Password</label>
+                <input type="password" class="form-control" id="password"/>
+                <input type="submit" class="form-control btn-color mt-3" id="exampleFormControlInput1"/>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap link js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const loginForm = document.getElementById("loginForm");
+
+        loginForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const email= document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            console.log(email);
+            console.log(password);
+
+            // Dummy authentication (replace this with your actual authentication logic)
+            if (email === "nasywa@gmail.com" && password === "n1234") {
+                // Simpan informasi login di session storage
+                sessionStorage.setItem("isLoggedIn", "true");
+
+                // Redirect ke halaman tujuan
+                alert("Login berhasil!");
+                window.location.href = "/login_dashboard_te1_pemograman_web1/dashboard.html";
+            } else {
+                alert("Username atau password salah. Silakan coba lagi.");
+            }
+        });
+    });
+
+    </script>
+</html>
